@@ -5,7 +5,7 @@ use app\models\User;
 
 class UserController
 {
-    public function getUsers() {
+    public function displyPost() {
         $params = [
             //ternary shorthand, if left if true assign it, and if not assign right
             'name' => $_GET['name'] ?: null,

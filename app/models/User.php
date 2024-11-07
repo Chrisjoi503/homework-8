@@ -5,7 +5,7 @@ namespace app\models;
 class User {
     public function getAllUsersByName($params) {
         //in future these will come from the database
-
+        
         $allUsers = [
             [
                 'id' => '1',
