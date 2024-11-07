@@ -13,11 +13,11 @@
         </style>
     </head>
     <body>
-        <div id="users-container"></div>
+        <div id="post-container"></div>
         <div class="container mt-3 w-25">
             <div class="row">
                 <h3>Add Posts</h3>
-                <form id="users-form" class="">
+                <form id="post-form" class="">
                     <div class="mb-3">
                         <label for="title-input" class="form-label">Title</label>
                         <input type="text" class="form-control" id="title-input">
@@ -36,7 +36,7 @@
 
         <script>
             $(document).ready(function () {
-                $('#users-form').on('submit', function (e) {
+                $('#post-form').on('submit', function (e) {
                     e.preventDefault();
                     var title = $('#title-input').val(); 
                     var content = $('#content-input').val(); 
@@ -50,7 +50,7 @@
                     };
 
                     $.ajax({
-                        url: 'http://localhost:8888/api/users',
+                        url: 'http://localhost:8888/api/post',
                         type: "POST",
                         data: data,
                         dataType: "json",

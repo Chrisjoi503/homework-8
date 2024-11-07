@@ -16,13 +16,13 @@
                 </div>
             </div>
             <div class="row">
-                <div id="users-container"></div>
+                <div id="post-container"></div>
             </div>
         </div>
         <script>
             $(document).ready(function () {
                 $("#search-button").click(function () {
-                    const url = $('#search-text').val() ? `http://localhost:8888/api/users?name=${$('#search-text').val()}` : `http://localhost:8888/api/users`;
+                    const url = $('#search-text').val() ? `http://localhost:8888/api/post?title=${$('#search-text').val()}` : `http://localhost:8888/api/post`;
                     $.ajax({
                         url: url,
                         type: "GET",
