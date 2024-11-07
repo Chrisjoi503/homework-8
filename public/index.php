@@ -21,9 +21,9 @@ if ($uriArray[1] === 'post' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 
 if ($uriArray[1] === 'api' && $uriArray[2] === 'post' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $postController = new PostController();
-    $postontroller->savePost();
+    $postController->savePost();
 }
 
-if ($uriArray[1] === 'addPost' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($uriArray[1] === 'addpost' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     require './views/addPost.html';
 }

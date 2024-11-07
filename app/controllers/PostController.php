@@ -35,7 +35,7 @@ class PostController
             if (strlen($title) < 2) {
                 $errors['title'] = 'title is too short';
             
-        } else {
+        } else if (strlen($title) == 0) {
             $errors['title'] = 'Title is required';
         }
 
@@ -43,8 +43,8 @@ class PostController
         if (strlen($content) < 2) {
             $errors['content'] = 'Content is too short';
         }
-    } else {
-        $errors['title'] = 'name is required';
+    } else if (strlen($content) == 0){
+        $errors['content'] = 'Content is required';
     }
         
 
@@ -59,7 +59,7 @@ class PostController
 
         $returnData = [
             'title' => $title,
-            'acontent' => $content
+            'content' => $content
         ];
         echo json_encode($returnData);
         exit();
