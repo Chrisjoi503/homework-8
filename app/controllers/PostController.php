@@ -7,7 +7,7 @@ class UserController
 {
     public function getPosts() {
         $params = [
-            //ternary shorthand, if left if true assign it, and if not assign right
+            
             'title' => $_GET['title'] ?: null,
         ];
         $postModel = new post();
@@ -25,8 +25,7 @@ class UserController
 
         //validate and sanitize name ***
         if ($title) {
-            //sanitize, htmlspecialchars replaces html reserved characters with their entity numbers
-            //meaning they can't be run as code
+           
             $title = htmlspecialchars($title);
 
 //
@@ -46,17 +45,7 @@ class UserController
     } else {
         $errors['title'] = 'name is required';
     }
-
-        //email via regular expressions
-        if ($email) {
-            //regex for valid email
-            $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-            if (!preg_match($regex, $email)) {
-                $errors['email'] = 'email is invalid';
-            }
-        } else {
-            $errors['email'] = 'email is required';
-        }
+        
 
         //if we have errors
         if (count($errors)) {
