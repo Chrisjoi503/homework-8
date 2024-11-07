@@ -1,0 +1,30 @@
+1. Write a query string with 2 values for www.example.com 
+
+https://www.example.com/search?query=database&order=alphabetical
+
+2. What is meant by escaping a character? 
+
+It means removing and replacing any characters that should not appear in a value
+such as characters that would try to behave as code when that is not wanted.
+
+3. What are the following HTTP status and their meanings: 
+a. 200: Status is Success/Ok which means that the page that has been requested has been fetched 
+b. 400: Status is Bad Request. This means that the Server is unable to understand the page that the client requested and should not repeat the request 
+without any changes since it could be a malformed, deceptive request routing, or invalid request.
+c. 401: Status is Unauthorized Error. It means the HTTP Status code needs er authentication 
+d. 403: Status is Forbidden. It means the request is understood by the server but refuses to fulfill it. Usually should tell you the reason for the refusal.
+e. 404: Status is Not Found. It means the server did not find anything on the requested URL. Occurs when the server does not want to clarify why
+the request was refused.
+f. 500: Status is Internal Server Error. It means requested URL is not fulfilled due to the server encountering an unexpected condition. 
+Is shown when there is an error during a connection to the server and the requested page can not be accessed.
+
+4. Why do we need to validate data? 
+
+We need it to check if the data that has been given is acceptable for our defined field or not. It can help with organization, consistency and 
+let us know what to expect. 
+
+5. What are sessions and cookies? What do they do? 
+
+Sessions and cookies is how we know who is requesting each page. Cookies is a text file that is stored with data about a user and it is something a website can tell a browser to do. When a browser requests nother page from
+that same domain, it sends the data from the cookie back to the server. Sessions is also a text file and it stores information about a user and their preferences on the server however they only store the data for the duration
+ of a single visit to the site. 
