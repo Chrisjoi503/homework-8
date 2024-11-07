@@ -5,49 +5,47 @@ use app\models\User;
 
 class UserController
 {
-    public function displyPost() {
+    public function getPosts() {
         $params = [
             //ternary shorthand, if left if true assign it, and if not assign right
-            'name' => $_GET['name'] ?: null,
+            'title' => $_GET['title'] ?: null,
         ];
-        $userModel = new User();
-        $users = $userModel->getAllUsersByName($params);
+        $postModel = new post();
+        $post = $postModel->getPosts($params);
         header("Content-Type: application/json");
-        echo json_encode($users);
+        echo json_encode($post);
         exit();
     }
 
     public function saveUser() {
         //get post data from our form post
-        $name = $_POST['name'] ?: null;
-        $age = $_POST['age'] ?: null;
-        $email = $_POST['email'] ?: null;
+        $title = $_POST['title'] ?: null;
+        $content = $_POST['content'] ?: null;
         $errors = [];
 
-        //validate and sanitize name
-        if ($name) {
+        //validate and sanitize name ***
+        if ($title) {
             //sanitize, htmlspecialchars replaces html reserved characters with their entity numbers
             //meaning they can't be run as code
-            $name = htmlspecialchars($name);
+            $title = htmlspecialchars($title);
 
-//            echo htmlspecialchars($name);
+//
 
-            //validate text length
-            if (strlen($name) < 2) {
-                $errors['name'] = 'name is too short';
-            }
+            //validate title length
+            if (strlen($title) < 2) {
+                $errors['title'] = 'title is too short';
+            
         } else {
-            $errors['name'] = 'name is required';
+            $errors['title'] = 'Title is required';
         }
 
-        //numbers
-        if ($age) {
-            if ($age < 0 || $age > 120 || !intval($age)) {
-                $errors['age'] = 'age is invalid';
-            }
-        } else {
-            $errors['age'] = 'age is required';
+        //validate content length
+        if (strlen($content) < 2) {
+            $errors['content'] = 'Content is too short';
         }
+    } else {
+        $errors['title'] = 'name is required';
+    }
 
         //email via regular expressions
         if ($email) {
