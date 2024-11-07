@@ -5,13 +5,13 @@ use app\models\User;
 
 class UserController
 {
-    public function getPosts() {
+    public function getPost() {
         $params = [
             
             'title' => $_GET['title'] ?: null,
         ];
         $postModel = new post();
-        $post = $postModel->getPosts($params);
+        $post = $postModel->getPost($params);
         header("Content-Type: application/json");
         echo json_encode($post);
         exit();

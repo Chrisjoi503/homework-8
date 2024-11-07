@@ -30,13 +30,6 @@ class Post {
     ];
     return $allPosts;
 }
-// function for searching post
-function Search($value, $array)
-  {
-      return (array_search($value, $array));
-  }
-
-// function for adding post 
 
 
 public function savePost() {
