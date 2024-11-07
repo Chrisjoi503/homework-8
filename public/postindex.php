@@ -12,16 +12,16 @@ $uriArray = explode("/", $url);
 
 if ($uriArray[1] === 'api' && $uriArray[2] === 'post' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $postController = new PostController();
-    $PostController->getPost();
+    $postController->getPost();
 }
 
 if ($uriArray[1] === 'post' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     require './views/displayPost.html';
 }
 
-if ($uriArray[1] === 'api' && $uriArray[2] === 'users' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userController = new UserController();
-    $userController->saveUser();
+if ($uriArray[1] === 'api' && $uriArray[2] === 'post' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $postController = new PostController();
+    $postontroller->savePost();
 }
 
 if ($uriArray[1] === 'addPost' && $_SERVER['REQUEST_METHOD'] === 'GET') {
