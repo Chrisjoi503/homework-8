@@ -1,9 +1,9 @@
 <?php
 
 namespace app\controllers;
-use app\models\User;
+use app\models\Post;
 
-class UserController
+class PostController
 {
     public function getPost() {
         $params = [
