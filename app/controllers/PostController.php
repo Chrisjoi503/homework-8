@@ -17,7 +17,7 @@ class UserController
         exit();
     }
 
-    public function saveUser() {
+    public function savePost() {
         //get post data from our form post
         $title = $_POST['title'] ?: null;
         $content = $_POST['content'] ?: null;
