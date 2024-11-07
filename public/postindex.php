@@ -2,7 +2,7 @@
 require "../app/models/Post.php";
 require "../app/controllers/PostController.php";
 
-use app\controllers\UserController;
+use app\controllers\PostController;
 
 
 $url = strtok($_SERVER["REQUEST_URI"], '?');
