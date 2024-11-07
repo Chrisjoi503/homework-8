@@ -10,6 +10,7 @@ class PostController
             
             'title' => $_GET['title'] ?: null,
         ];
+        
         $postModel = new post();
         $post = $postModel->getPost($params);
         header("Content-Type: application/json");
